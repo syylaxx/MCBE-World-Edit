@@ -1,0 +1,51 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"syylaxx"
+		]
+	},
+	"header": {
+		"name": "World Edit!",
+		"description": "A World Edit project, made for Minecraft Bedrock Edition.",
+		"min_engine_version": [
+			1,
+			20,
+			50
+		],
+		"uuid": "16141de6-9cfc-43a1-9796-bcf649f44836",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "2ea82cac-6458-4a5c-b82d-c8c732206ea1",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "ed0eb628-d679-4022-a778-b25726eac662",
+			"entry": "scripts/import.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.8.0-beta"
+		},
+	]
+}
