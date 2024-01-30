@@ -1,0 +1,19 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "world-edit:axe",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "world-edit_wood_axe"
+			},
+			"minecraft:display_name": {
+				"value": "§l§eWorld Edit Axe!§r"
+			},
+			"minecraft:foil": true,
+			"minecraft:hand_equipped": true
+		}
+	}
+}

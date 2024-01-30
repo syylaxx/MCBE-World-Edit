@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "world-edit",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "world-edit_wood_axe": {
+            "textures": "textures/items/wood_axe"
+        }
+    }
+}
