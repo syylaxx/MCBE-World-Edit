@@ -13,7 +13,8 @@
 				"value": "§l§eWorld Edit Axe!§r"
 			},
 			"minecraft:foil": true,
-			"minecraft:hand_equipped": true
+			"minecraft:hand_equipped": true,
+			"minecraft:max_stack_size": 1
 		}
 	}
 }
