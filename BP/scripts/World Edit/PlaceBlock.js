@@ -1,5 +1,4 @@
 import { world, system, Vector } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
 
 world.beforeEvents.itemUse.subscribe((eventData) => {
     const { source, itemStack } = eventData

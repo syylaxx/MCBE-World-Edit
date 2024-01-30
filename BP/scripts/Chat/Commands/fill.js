@@ -1,38 +1,43 @@
-import { world, system, BlockPermutation } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
+import { world, system, BlockPermutation, Player } from "@minecraft/server"
 
-function setBlocks(sender, message) {
-    const prefix = world.getDynamicProperty("WorldEdit:Prefix")
+/**
+ * @param {Player} player
+ * @param {string} message
+ */
 
-    const coordinate1 = sender.getDynamicProperty("WorldEdit:Coordinate1")
-    const coordinate2 = sender.getDynamicProperty("WorldEdit:Coordinate2")
+function setBlocks(player, message) {
+    const coordinate1 = player.getDynamicProperty("WorldEdit:Coordinate1")
+    const coordinate2 = player.getDynamicProperty("WorldEdit:Coordinate2")
 
     if (coordinate1 === undefined || coordinate2 === undefined) {
-        sender.sendMessage("§l§8 » §r§7To execute this Command you need Saved Blocks!§r")
+        player.sendMessage("§l§8 » §r§7To execute this Command you need Saved Blocks!§r")
         return
     }
+
     system.run(() => {
         try {
-            world.getDimension("overworld").fillBlocks(coordinate1, coordinate2, message.split(prefix + "fill ")[1])
-            sender.sendMessage("§l§8 » §r§7Successfully placed Blocks!§r")
+            world.getDimension("overworld").fillBlocks(coordinate1, coordinate2, message.split(" ")[1])
+            player.sendMessage("§l§8 » §r§7Successfully placed Blocks!§r")
         } catch (error) {
-            sender.sendMessage("§l§8 » §r§7Placing Blocks failed! It can be too big, Out of the World or wrong TypeID!§r")
+            player.sendMessage("§l§8 » §r§7Placing Blocks failed! It can be too big, Out of the World or wrong TypeID!§r")
         }
     })
 
-    sender.setDynamicProperty("WorldEdit:Coordinate1", undefined)
-    sender.setDynamicProperty("WorldEdit:Coordinate2", undefined)
+    player.setDynamicProperty("WorldEdit:Coordinate1", undefined)
+    player.setDynamicProperty("WorldEdit:Coordinate2", undefined)
 }
 
-function replaceBlocks(player, message) {
-    const prefix = world.getDynamicProperty("WorldEdit:Prefix")
+/**
+ * @param {Player} player
+ * @param {string} message
+ */
 
+function replaceBlocks(player, message) {
     const coordinate1 = player.getDynamicProperty("WorldEdit:Coordinate1")
     const coordinate2 = player.getDynamicProperty("WorldEdit:Coordinate2")
 
     const subcommand = message.split(" ")[1]
-
-    const replaceID = message.split(prefix + "fill ")[1].split(" ")[2]
+    const replaceID = message.split(" ")[3]
 
     if (coordinate1 === undefined || coordinate2 === undefined) {
         player.sendMessage("§l§8 » §r§7To execute this Command you need Saved Blocks!§r")
@@ -62,7 +67,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
 
     eventData.cancel = true
 
-    const subcommand = message.split(prefix + "fill ")[1].split(" ")[1]
+    const subcommand = message.split(" ")[2]
 
     if (subcommand?.toLowerCase() !== "replace") {
         setBlocks(sender, message)

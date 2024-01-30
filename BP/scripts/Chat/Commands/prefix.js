@@ -1,26 +1,27 @@
 import { world } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
 
-world.afterEvents.playerJoin.subscribe((eventData) => {
-    newDynamicPorperty(world, "WorldEdit:Prefix", "?")
+world.afterEvents.playerJoin.subscribe(() => {
+    if (world.getDynamicProperty("WorldEdit:Prefix") === undefined) {
+        world.setDynamicProperty("WorldEdit:Prefix", "?")
+    }
 })
 
 world.beforeEvents.chatSend.subscribe((eventData) => {
     let { message, sender } = eventData
     const prefix = world.getDynamicProperty("WorldEdit:Prefix")
 
-    if (!message.toLowerCase().startsWith(prefix + "prefix"))
+    message = message.toLowerCase()
+
+    if (!message.startsWith(prefix + "prefix"))
         return
 
     eventData.cancel = true
 
-    if (message.toLowerCase() === prefix + "prefix") {
+    if (message === prefix + "prefix") {
         sender.sendMessage("§l§8 » §r§7Proper usage : '" + prefix + "prefix' <prefix>§r")
     }
 
-    message = message.toLowerCase()
-
-    const newPrefix = message.split(prefix + "prefix ")[1]
+    const newPrefix = message.split(" ")[1]
 
     if (newPrefix === "") {
         sender.sendMessage("§l§8 » §r§7This Prefix is not Valid!§r")

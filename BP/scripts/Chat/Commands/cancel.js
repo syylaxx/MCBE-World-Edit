@@ -1,5 +1,4 @@
-import { world, system, Vector } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
+import { world } from "@minecraft/server"
 
 world.beforeEvents.chatSend.subscribe((eventData) => {
     const { message, sender } = eventData

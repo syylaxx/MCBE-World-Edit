@@ -6,8 +6,8 @@
 		]
 	},
 	"header": {
-		"name": "World Edit!",
-		"description": "§l§7Official Resource Pack §eWorld Edit§7.\n §8» §7Made by §b§osyylaxx§r",
+		"name": "§l§7World Edit!§r §8- §bsyylaxx§r",
+		"description": "§l§7World Edit!§r §8- §bsyylaxx§r\n §l§8» §7Resource Pack",
 		"min_engine_version": [
 			1,
 			20,

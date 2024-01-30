@@ -1,13 +1,10 @@
-import { world, system, Player } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
+import { world, Player } from "@minecraft/server"
 
 /**
  * @param {Player} player
  */
 
 function paste(player) {
-    const prefix = world.getDynamicProperty("WorldEdit:Prefix")
-
     const coordinate1 = player.getDynamicProperty("WorldEdit:Coordinate1")
 
     const coordinates1 = coordinate1.x + " " + coordinate1.y + " " + coordinate1.z
@@ -17,14 +14,12 @@ function paste(player) {
         return
     }
 
-    system.run(() => {
-        try {
-            world.getDimension("overworld").runCommand(`structure load "` + player.id + `" ` + coordinates1)
-            player.sendMessage("§l§8 » §r§7Successfully Pasted Blocks!§r")
-        } catch (error) {
-            player.sendMessage("§l§8 » §r§7Pasting Blocks failed! It can be out of World!§r")
-        }
-    })
+    try {
+        world.getDimension("overworld").runCommandAsync(`structure load "` + player.id + `" ` + coordinates1)
+        player.sendMessage("§l§8 » §r§7Successfully Pasted Blocks!§r")
+    } catch (error) {
+        player.sendMessage("§l§8 » §r§7Pasting Blocks failed! It can be out of World!§r")
+    }
 
     player.setDynamicProperty("WorldEdit:Coordinate1", undefined)
     player.setDynamicProperty("WorldEdit:Coordinate2", undefined)

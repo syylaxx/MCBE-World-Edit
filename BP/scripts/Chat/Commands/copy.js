@@ -1,13 +1,10 @@
-import { world, system, Player, Vector } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
+import { world, system, Player } from "@minecraft/server"
 
 /**
  * @param {Player} player
  */
 
 function clone(player) {
-    const prefix = world.getDynamicProperty("WorldEdit:Prefix")
-
     const coordinate1 = player.getDynamicProperty("WorldEdit:Coordinate1")
     const coordinate2 = player.getDynamicProperty("WorldEdit:Coordinate2")
 
@@ -18,8 +15,6 @@ function clone(player) {
         player.sendMessage("§l§8 » §r§7To execute this Command you need Saved Blocks!§r")
         return
     }
-
-    console.warn(`structure save "` + player.id + `" ` + coordinates1 + " " + coordinates2 + " false memory true")
 
     system.run(() => {
         try {

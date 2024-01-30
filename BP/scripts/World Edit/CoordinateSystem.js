@@ -1,5 +1,9 @@
-import { world, system, Vector } from "@minecraft/server"
-import "Wrapper/Wrapper.js"
+import { world, system, Vector, Player } from "@minecraft/server"
+
+/**
+ * @param {Vector} vector
+ * @param {Player} player
+ */
 
 function setCoordinates(vector, player) {
     const prefix = world.getDynamicProperty("WorldEdit:Prefix")
@@ -32,10 +36,12 @@ world.beforeEvents.playerBreakBlock.subscribe((eventData) => {
 
     eventData.cancel = true
 
-    if (player.getDynamicProperty("WorldEdit:BlockSaveTimeout") !== 0 && player.getDynamicProperty("WorldEdit:BlockSaveTimeout") > 5)
+    const timeoutValue = player.getDynamicProperty("WorldEdit:BlockSaveTimeout")
+
+    if (timeoutValue !== 0 && timeoutValue > 10)
         return
 
-    player.setDynamicProperty("WorldEdit:BlockSaveTimeout", 5)
+    player.setDynamicProperty("WorldEdit:BlockSaveTimeout", 10)
 
     setCoordinates(block.location, player)
 })
