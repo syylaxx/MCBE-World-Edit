@@ -24,12 +24,6 @@ function setCoordinates(vector, player) {
     }
 }
 
-world.afterEvents.playerSpawn.subscribe((eventData) => {
-    if (!eventData.initialSpawn) {
-        eventData.player.setDynamicProperty("WorldEdit:BlockSaveTimeout", 0)
-    }
-})
-
 world.beforeEvents.playerBreakBlock.subscribe((eventData) => {
     const { itemStack, block, player } = eventData
 
@@ -38,7 +32,7 @@ world.beforeEvents.playerBreakBlock.subscribe((eventData) => {
 
     eventData.cancel = true
 
-    if (player.getDynamicProperty("WorldEdit:BlockSaveTimeout") !== 0)
+    if (player.getDynamicProperty("WorldEdit:BlockSaveTimeout") !== 0 && player.getDynamicProperty("WorldEdit:BlockSaveTimeout") > 5)
         return
 
     player.setDynamicProperty("WorldEdit:BlockSaveTimeout", 5)
