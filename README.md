@@ -41,3 +41,23 @@
 <h2 align="center">
  Requirements?
 </h2>
+<p>
+ Before using this Addon, you will need to turn on some Experiments :
+</p>
+<ul>
+ <li>
+  Beta API
+ </li>
+ <li>
+  Holiday Creator Features
+ </li>
+</ul>
+
+<h2 align="center">
+ Important :
+</h2>
+<p>
+ The basic prefix is : "?".<br>
+ You can always set it up to a different prefix using "?prefix < prefix >".<br><br>
+ This Addon is currently working on : 1.20.70 Version.
+</p>
