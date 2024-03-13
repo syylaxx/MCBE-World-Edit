@@ -30,4 +30,10 @@
  <li>
   paste [ 90 | 180 | 240 ]
  </li>
+ <li>
+  cancel
+ </li>
+ <li>
+  prefix < prefix >
+ </li>
 </ul>
