@@ -61,3 +61,18 @@
  You can always set it up to a different prefix using "?prefix < prefix >".<br><br>
  This Addon is currently working on : 1.20.70 Version.
 </p>
+
+<h2 align="center">
+ What's next?
+</h2>
+<ul>
+ <li>
+  Sphere Feature
+ </li>
+ <li>
+  Randomized Blocks Feature
+ </li>
+ <li>
+  Revamp of the Block Saving System
+ </li>
+</ul>
