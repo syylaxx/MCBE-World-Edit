@@ -6,7 +6,7 @@
  How do I use it?
 </h2>
 <ul>
- <li>
-  Test
+ <li align="center">
+  Get the World Edit Axe. You can get it using /give or via Creative Menu in Equipment Category.
 </li>
 </ul>
