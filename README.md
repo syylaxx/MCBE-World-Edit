@@ -16,3 +16,7 @@
   Use "?fill minecraft:grass" or any other avaible command.
  </li>
 </ul>
+
+<h2 align="center">
+ All Commands :
+</h2>
