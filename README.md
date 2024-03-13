@@ -20,3 +20,14 @@
 <h2 align="center">
  All Commands :
 </h2>
+<ul>
+ <li>
+  fill <block.typeId> [replace] [block.typeId]
+ </li>
+ <li>
+  copy
+ </li>
+ <li>
+  paste [90 || 180 || 240]
+ </li>
+</ul>
