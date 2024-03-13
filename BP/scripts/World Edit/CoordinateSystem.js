@@ -38,7 +38,7 @@ world.beforeEvents.playerBreakBlock.subscribe((eventData) => {
 
     const timeoutValue = player.getDynamicProperty("WorldEdit:BlockSaveTimeout")
 
-    if (timeoutValue !== 0 && timeoutValue > 10)
+    if (timeoutValue !== 0)
         return
 
     player.setDynamicProperty("WorldEdit:BlockSaveTimeout", 10)
