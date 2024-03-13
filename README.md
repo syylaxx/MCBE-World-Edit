@@ -73,6 +73,6 @@
   Randomized Blocks Feature
  </li>
  <li>
-  Revamp of the Block Saving System
+  Revamp of the Block Saving Mechanic
  </li>
 </ul>
