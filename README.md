@@ -36,6 +36,12 @@
  <li>
   prefix < prefix >
  </li>
+ <li>
+  sphere < typeID > < radius >
+ </li>
+ <li>
+  sphereCreationSpeed < value >
+ </li>
 </ul>
 
 <h2 align="center">
@@ -67,7 +73,7 @@
 </h2>
 <ul>
  <li>
-  Sphere Feature
+  <s>Sphere Feature</s>
  </li>
  <li>
   Randomized Blocks Feature
