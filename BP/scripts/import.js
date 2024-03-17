@@ -5,6 +5,7 @@ import "./Chat/Commands/help.js"
 import "./Chat/Commands/paste.js"
 import "./Chat/Commands/prefix.js"
 import "./Chat/Commands/sphere.js"
+import "./Chat/Commands/sphereCreationSpeed.js"
 
 import "./World Edit/CoordinateSystem.js"
 import "./World Edit/PlaceBlock.js"
