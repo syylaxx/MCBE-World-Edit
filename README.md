@@ -79,6 +79,12 @@
   Randomized Blocks Feature
  </li>
  <li>
+  Undo Feature
+ </li>
+ <li>
   Revamp of the Block Saving Mechanic
+ </li>
+ <li>
+  Shading Feature
  </li>
 </ul>
