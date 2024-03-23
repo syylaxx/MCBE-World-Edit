@@ -87,4 +87,10 @@
  <li>
   Shading Feature
  </li>
+ <li>
+  Pyramid Feature
+ </li>
+ <li>
+  Circle Feature
+ </li>
 </ul>
